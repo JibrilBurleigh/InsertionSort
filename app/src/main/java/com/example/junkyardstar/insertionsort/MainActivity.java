@@ -69,7 +69,8 @@ public class MainActivity extends AppCompatActivity {
             unsortedInt[temp + 1] = key;
         }
 
-        intent.putExtra(SORTING, unsortedInt);
+        Bundle bundle = new Bundle();
+        bundle.putIntArray(null, unsortedInt);
         startActivity(intent);
     }
     

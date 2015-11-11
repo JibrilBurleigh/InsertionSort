@@ -9,17 +9,24 @@ import android.widget.TextView;
 
 public class InsertionSort extends AppCompatActivity {
 
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        String message = intent.getStringExtra(MainActivity.SORTING);
+        Bundle b = this.getIntent().getExtras();
 
-        TextView sorted = new TextView(this);
-        sorted.setTextSize(25);
-        sorted.setText(message);
 
-        setContentView(sorted);
+        int [] sorted = b.getIntArray(null);
+        StringBuilder sb = new StringBuilder();
+        for(int i: sorted)
+        {
+            sb.append(Integer.toString(i));
+        }
+
+        String intString = sb.toString();
+
+        textView.setText(intString);
     }
 
     @Override
